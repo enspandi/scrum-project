@@ -1,3 +1,81 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
 {{outlet}}
+<header class="page-header">
+  <h1>Agile Software Development</h1>
+</header>
+
+<div class="row">
+  <nav class="col-md-2">
+    <ul>
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>Inbox</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>Backlog</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Defects</a></li>
+      <li>
+        <a href="#"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Sprints</a>
+        <ul>
+          <li><a href="#">Sprint 23/03 - 03/04</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Done</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>Documents</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Settings</a></li>
+    </ul>
+  </nav>
+  <section class="col-md-6">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></td>
+          <td>Opening a scheduled training plan throws Error</td>
+          <td>A - Must Have</td>
+          <td>Andreas Minnich</td>
+          <td>3 hours ago</td>
+        </tr>
+        <tr>
+          <td><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></td>
+          <td>OAuth 2.0 Server Implementation</td>
+          <td>C - Could Have</td>
+          <td>Andreas Minnich</td>
+          <td>09.03.2015 17:11</td>
+        </tr>
+        <tr>
+          <td><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></td>
+          <td>User data lost</td>
+          <td>D - Nice To Have</td>
+          <td>Support</td>
+          <td>08.03.2015 12:10</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <aside class="col-md-4">
+    <form>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" placeholder="Enter Subject" value="Opening a scheduled training plan throws Error">
+      </div>
+      <div class="form-group">
+        <label for="story">Story</label>
+        <textarea class="form-control" id="story" rows="3">When i click on the button i get an error: ... stacktrace. Steps to reproduce: 1. asdasd, 2. sdfsdf</textarea>
+      </div>
+      <div class="form-group">
+        <label for="priority">Priority</label>
+        <select class="form-control" id="priority">
+          <option>A - Must Have</option>
+          <option>B - Should Have</option>
+          <option>C - Could Have</option>
+          <option>D - Nice To Have</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="story">Comments</label>
+        <textarea class="form-control" id="story" rows="3" disabled>Created 3 hours ago by Andreas Minnich.</textarea>
+      </div>
+      <div class="form-group">
+        <label for="attachment">Attachments</label>
+        <input type="file" id="attachment">
+      </div>
+      <button type="submit" class="btn btn-default">Save</button>
+    </form>
+  </aside>
+</div>

@@ -1,0 +1,26 @@
+body { font-family: Arial; }
+ul { margin: 0; padding: 0; }
+li { padding: 8px 0 0 0; }
+
+nav ul { list-style-type: none; margin-left: 25px; }
+nav ul ul { margin-left: 30px; }
+nav li.active a { text-decoration: underline; color: #23527c; }
+nav li .glyphicon { margin: 0 6px; padding: 0 4px 0 0;}
+nav li a { width: 190px; height: 28px; display: block; }
+header { padding-left: 20px; }
+
+table.table-hover {
+  cursor: pointer;
+}
+table.table-hover tbody td {
+  border: none;
+}
+table.table-hover tbody tr {
+  color: rgba(0, 0, 0, 0.75);
+}
+table.table-hover tbody tr:hover {
+  color: black;
+}
+.page-header { margin: 20px 0 20px; }
+
+aside.col-md-4 { padding: 0 30px 0 0; }
