@@ -1,0 +1,7 @@
+h2 Choose a Project
+= projects-list projects=model
+p
+  link-to 'projects.new' class="btn btn-primary"
+    | Start a New Project    
+
+= outlet

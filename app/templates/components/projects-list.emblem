@@ -1,0 +1,5 @@
+if hasProjects
+  .list-group
+    each project in projects
+      link-to 'project' project class="list-group-item"
+        = project.name

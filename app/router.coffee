@@ -6,5 +6,15 @@ Router = Ember.Router.extend
 
 Router.map ->
   @resource 'projects', ->
+    @route 'new'
+  
+  @resource 'project', { path: '/project/:project_id' }
+
+
+
+
+  
+
+
 
 `export default Router;`

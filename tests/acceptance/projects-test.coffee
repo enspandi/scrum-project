@@ -13,16 +13,48 @@ module 'Acceptance: Projects',
     Ember.run application, 'destroy'
 
 
-##
-# As a user,
-# I should be able to see a list of all projects,
-# so I can choose my current workspace project.
-#
-# Scenario: Display list of projects
-#   When I navigate to the projects list
-#   Then I should see the list of projects.
-test 'Project List', (assert) ->
+PROJECTS     = 'li.project-item'
+LAST_PROJECT = 'li.project-item:last'
+ALERTS       = 'span.alert'
+
+test 'Project list', ->
   visit '/projects'
   andThen ->
-    listOfProjects = Em.$('li.project-item').length
-    assert.equal(listOfProjects, 3, 'should display list of projects')
+    equal(find(PROJECTS).length, 3, 'A user is able to see a list of projects.')
+
+test 'Add a new project when the new project is valid', ->
+  visit '/projects'
+  click('button.btn-create')
+  andThen ->
+    fillIn('#inputName', 'My New Startup')
+    click('button.btn-save')
+    andThen ->
+      equal(find(LAST_PROJECT).text(), 'My New Startup', 'New project with name: "My New Startup".')
+      equal(find(PROJECTS).length, 4, 'Project count is now 4.')
+      equal(find(ALERTS).length, 0, 'No alert message is shown.')
+    ###
+    andThen ->
+      fillIn('input.form-po', 'productowner@startupxy.com')
+      fillIn('input.form-sm', 'scrummaster@startupxy.com')
+      fillIn('input.form-dev1', 'dev1@startupxy.com')
+      fillIn('input.form-dev2', 'dev2@startupxy.com')
+      fillIn('input.form-dev3', 'dev3@startupxy.com')
+      click('button.btn-add')
+      andThen ->
+        fillIn('input.form-dev4', 'dev4@startupxy.com')
+        click('button.btn-save')
+        andThen ->
+    ###
+
+test 'Add a new project when the new project is valid', ->
+  visit '/projects'
+  click('button.btn-create')
+  andThen ->
+    fillIn('#inputName', '')
+    click('button.btn-save')
+    andThen ->
+      equal(find(PROJECTS).length, 3, 'Project count is still 3.')
+      equal(find(ALERTS).length, 1, 'An alert is shown.')
+
+#test 'Add a new project when the new project is valid', ->
+  #Start a New Project!

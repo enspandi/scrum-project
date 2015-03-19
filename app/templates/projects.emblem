@@ -1,12 +1,1 @@
-h1
-  | List of projects
-ul.projects-list
-  each project in model
-    li.project-item
-      a
-        span
-          | [...Icon...]
-        span
-          = project.name
-
 = outlet
