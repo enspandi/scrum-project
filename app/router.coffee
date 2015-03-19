@@ -10,11 +10,4 @@ Router.map ->
   
   @resource 'project', { path: '/project/:project_id' }
 
-
-
-
-  
-
-
-
 `export default Router;`

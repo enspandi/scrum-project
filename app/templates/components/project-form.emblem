@@ -1,0 +1,6 @@
+div class="form-group"
+  label for="inputName" Name
+  = input class="form-control" id="inputName" value=projectName placeholder="Enter Name"
+
+a{ action 'create' } class="btn btn-default js-save-project"
+  | Create Project

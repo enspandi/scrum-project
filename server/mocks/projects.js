@@ -13,7 +13,13 @@ module.exports = function(app) {
   });
 
   projectsRouter.post('/', function(req, res) {
-    res.status(201).end();
+    var newProject = {
+      projects: {
+        id: "13",
+        name: "My New Startup"
+      }
+    };
+    res.send(newProject).status(201).end();
   });
 
   projectsRouter.get('/:id', function(req, res) {
@@ -38,3 +44,4 @@ module.exports = function(app) {
 
   app.use('/api/v1/projects', projectsRouter);
 };
+

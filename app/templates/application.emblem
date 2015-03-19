@@ -1,3 +1,7 @@
 div.jumbotron
   div.container
+    if alertMessage
+      div class="alert alert-danger" role="alert"
+        | Error: #{alertMessage}
+
     = outlet
